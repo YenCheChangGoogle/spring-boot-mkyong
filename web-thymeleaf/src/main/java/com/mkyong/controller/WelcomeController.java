@@ -13,7 +13,6 @@ import java.util.List;
 @Controller
 public class WelcomeController {
 
-    TomcatServletWebServerFactory
     // inject via application.properties
     @Value("${welcome.message}")
     private String message;
