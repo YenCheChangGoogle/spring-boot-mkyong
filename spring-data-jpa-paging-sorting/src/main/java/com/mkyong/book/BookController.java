@@ -14,6 +14,9 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
+    //以價錢排序降冪 http://127.0.0.1:8080/books?sortBy=price&sortDirection=desc
+    //以編號排序升冪 http://127.0.0.1:8080/books?sortBy=id&sortDirection=asc
+    //以出版日排序升冪 http://127.0.0.1:8080/books?sortBy=publishDate&sortDirection=asc
     @GetMapping("/books")
     public List<Book> findAll(
             @RequestParam(defaultValue = "0") int pageNo,
