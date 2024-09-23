@@ -17,7 +17,7 @@ public class SampleJobService {
 
     @Job(name = "The sample job with variable %0")
     public void execute(String input) {
-        logger.info("The sample job has begun. The variable you passed is {}", input);
+        logger.info("測試執行3秒工作 The sample job has begun. The variable you passed is {}", input);
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {

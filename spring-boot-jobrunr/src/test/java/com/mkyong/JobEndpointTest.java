@@ -46,17 +46,15 @@ public class JobEndpointTest {
                 .until(() -> storageProvider.countJobs(StateName.SCHEDULED) == 1);
     }
 
-    private String runJobViaRest(String input) {
-        return restTemplate.getForObject(
-                "http://localhost:8080/run-job?name=" + input,
-                String.class);
-    }
+	private String runJobViaRest(String input) {
+		return restTemplate.getForObject("http://localhost:8080/run-job?name=" + input, String.class);
+	}
 
-    private String scheduleJobViaRest(String input, Duration duration) {
-        return restTemplate.getForObject(
-                "http://localhost:8080/schedule-job?name=" + input
-                        + "&when=" + duration.toString(),
-                String.class);
-    }
+	private String scheduleJobViaRest(String input, Duration duration) {
+		
+		System.out.println("http://localhost:8080/schedule-job?name=" + input + "&when=" + duration.toString());
+		
+		return restTemplate.getForObject("http://localhost:8080/schedule-job?name=" + input + "&when=" + duration.toString(), String.class);
+	}
 
 }
